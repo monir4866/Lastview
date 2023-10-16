@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	const endpoint = "https://lastviewgirls.xyz/graphql"
+	const endpoint = "https://monir-7b8e74.ingress-erytho.ewp.live/graphql"
 	const graphQLClient = new GraphQLClient(endpoint);
 	const referringURL = ctx.req.headers?.referer || null;
 	const pathArr = ctx.query.postpath as Array<string>;
@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://lastviewgirls.xyz` + encodeURI(path as string)
+					`monir-7b8e74.ingress-erytho.ewp.live` + encodeURI(path as string)
 				}`,
 			},
 		};
